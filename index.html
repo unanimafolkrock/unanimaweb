@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unánima - Folk Rock</title>
+    <!-- Iconos de FontAwesome para las redes -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- Fuentes copadas de Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* CONFIGURACIÓN GENERAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* FONDO CON ILUMINACIONES (Glows dorados y sutiles en las esquinas y centro) */
+            background-color: #0a0a0a;
+            background-image: 
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.07) 0%, transparent 40%),
+                radial-gradient(circle at 15% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 35%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            background-attachment: fixed;
+            color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px 20px;
+            font-family: 'Montserrat', sans-serif; /* Fuente base para textos */
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .wrapper {
+            width: 100%;
+            max-width: 440px; /* Un toque más compacta para estilizarla */
+            text-align: center;
+        }
+
+        /* ENCABEZADO (PERFIL) */
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .tour-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            color: #d4af37; /* Dorado */
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .profile-img {
+            width: 115px;
+            height: 115px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgba(212, 175, 55, 0.4); /* Borde dorado fino */
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15); /* Brillo suave en la foto */
+            margin-bottom: 15px;
+            background-color: #1a1a1a;
+        }
+
+        .header h1 {
+            font-family: 'Cinzel', serif; /* Fuente elegante/folclórica para el nombre */
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .header p {
+            font-size: 13px;
+            font-weight: 300;
+            color: #aaaaaa;
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        /* GRILLA BENTO (CUADRADITOS) */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-bottom: 25px;
+        }
+
+        /* TARJETAS CON GLASSMORPHISM (Efecto vidrio moderno) */
+        .card {
+            background: rgba(22, 22, 22, 0.7); /* Semitransparente para que pase la luz de fondo */
+            backdrop-filter: blur(10px); /* Desenfoque de fondo */
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 20px; /* Bordes un toque más redondeados */
+            padding: 22px;
+            text-decoration: none;
+            color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            text-align: left;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            min-height: 135px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Efecto al pasar el dedo o mouse */
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.4);
+            background: rgba(28, 28, 28, 0.8);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.05);
+        }
+
+        /* Iconos de las tarjetas */
+        .card-icon-top {
+            font-size: 18px;
+            color: #d4af37; /* Iconos dorados */
+            opacity: 0.9;
+        }
+
+        .arrow-icon {
+            position: absolute;
+            top: 22px;
+            right: 22px;
+            font-size: 10px;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .arrow-icon {
+            color: #d4af37;
+            transform: translate(2px, -2px);
+        }
+
+        /* Textos de las tarjetas */
+        .card-info {
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+
+        .card-subtitle {
+            font-size: 9px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #666;
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* TARJETA DESTACADA EN ANCHO COMPLETO */
+        .full-width {
+            grid-column: span 2;
+            min-height: auto;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 18px;
+            padding: 18px 22px;
+        }
+
+        .full-width i {
+            font-size: 22px;
+            color: #d4af37;
+        }
+
+        /* FOOTER DE REDES */
+        .social-footer {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .social-icon {
+            color: #555;
+            font-size: 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            color: #d4af37;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <!-- ENCABEZADO -->
+        <div class="header">
+            <span class="tour-tag">Folk Rock</span>
+            <img src="perfil.jpg" alt="Unánima" class="profile-img">
+            <h1>Unánima</h1>
+            <p>Música de nuestra tierra con fuerza de rock</p>
+        </div>
+
+        <!-- GRILLA BENTO -->
+        <div class="bento-grid">
+            
+            <!-- Tarjeta 1: Bio integrada -->
+            <div class="card" style="background: rgba(22, 22, 22, 0.45);">
+                <i class="fa-solid fa-feather card-icon-top"></i>
+                <div class="card-info">
+                    <p class="card-title" style="font-size: 12px; font-weight: 300; color: #cccccc; line-height: 1.4;">Fusión de raíces folclóricas argentinas y la energía del rock.</p>
+                    <span class="card-subtitle">Biografía</span>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Próximo Show -->
+            <a href="#" class="card">
+                <i class="fa-solid fa-calendar-days card-icon-top"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+                <div class="card-info">
+                    <p class="card-title">Próximo Show</p>
+                    <span class="card-subtitle">Próximamente</span>
+                </div>
+            </a>
+
+            <!-- Tarjeta 3: YouTube -->
+            <a href="https://youtube.com" target="_blank" class="card">
+                <i class="fa-brands fa-youtube card-icon-top"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+                <div class="card-info">
+                    <p class="card-title">Videos</p>
+                    <span class="card-subtitle">YouTube</span>
+                </div>
+            </a>
+
+            <!-- Tarjeta 4: Spotify -->
+            <a href="#" class="card">
+                <i class="fa-brands fa-spotify card-icon-top"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+                <div class="card-info">
+                    <p class="card-title">Escuchanos</p>
+                    <span class="card-subtitle">Spotify</span>
+                </div>
+            </a>
+
+            <!-- Tarjeta 5: Contacto -->
+            <a href="mailto:unanimafolkrock@gmail.com" class="card full-width">
+                <i class="fa-solid fa-envelope"></i>
+                <div class="card-info">
+                    <p class="card-title">Contrataciones & Prensa</p>
+                    <span class="card-subtitle">unanimafolkrock@gmail.com</span>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- FOOTER REDES -->
+        <div class="social-footer">
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+            <a href="mailto:unanimafolkrock@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+
+    </div>
+
+</body>
+</html>
