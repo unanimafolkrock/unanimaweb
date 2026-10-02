@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unánima - Folk Rock</title>
-    <!-- Iconos de FontAwesome para las redes -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <!-- Fuentes copadas de Google Fonts -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Unánima - Links</title>
+    <!-- CDN de FontAwesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
     <style>
         /* CONFIGURACIÓN GENERAL */
@@ -20,89 +20,90 @@
         }
 
         body {
-            /* FONDO CON ILUMINACIONES (Glows dorados y sutiles en las esquinas y centro) */
+            /* FONDO CON ILUMINACIONES MÁS FUERTES */
             background-color: #0a0a0a;
             background-image: 
-                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.07) 0%, transparent 40%),
-                radial-gradient(circle at 15% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 35%),
-                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 15% 70%, rgba(212, 175, 55, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.06) 0%, transparent 60%);
             background-attachment: fixed;
             color: #f2f2f2;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 30px 20px;
-            font-family: 'Montserrat', sans-serif; /* Fuente base para textos */
+            padding: 40px 20px;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* CONTENEDOR PRINCIPAL */
         .wrapper {
             width: 100%;
-            max-width: 440px; /* Un toque más compacta para estilizarla */
+            max-width: 400px;
             text-align: center;
         }
 
-        /* ENCABEZADO (PERFIL) */
+        /* ENCABEZADO */
         .header {
-            margin-bottom: 30px;
-        }
-
-        .tour-tag {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            font-weight: 500;
-            letter-spacing: 4px;
-            color: #d4af37; /* Dorado */
-            text-transform: uppercase;
-            margin-bottom: 18px;
-            display: block;
-        }
-
-        .profile-img {
-            width: 115px;
-            height: 115px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid rgba(212, 175, 55, 0.4); /* Borde dorado fino */
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15); /* Brillo suave en la foto */
-            margin-bottom: 15px;
-            background-color: #1a1a1a;
+            margin-bottom: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .header h1 {
-            font-family: 'Cinzel', serif; /* Fuente elegante/folclórica para el nombre */
-            font-size: 28px;
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
             font-weight: 700;
             letter-spacing: 2px;
             color: #ffffff;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
         }
 
-        .header p {
-            font-size: 13px;
-            font-weight: 300;
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+            margin-bottom: 20px;
+            background-color: #1a1a1a;
+        }
+
+        /* REDES SOCIALES EN ENCABEZADO */
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
             color: #aaaaaa;
-            margin-top: 6px;
-            letter-spacing: 0.5px;
+            font-size: 22px;
+            transition: all 0.3s ease;
+            text-decoration: none;
         }
 
-        /* GRILLA BENTO (CUADRADITOS) */
+        .social-links a:hover {
+            color: #d4af37;
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* GRILLA BENTO */
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
-            margin-bottom: 25px;
+            gap: 15px;
         }
 
-        /* TARJETAS CON GLASSMORPHISM (Efecto vidrio moderno) */
+        /* TARJETAS BASE - GLASSMORPHISM */
         .card {
-            background: rgba(22, 22, 22, 0.7); /* Semitransparente para que pase la luz de fondo */
-            backdrop-filter: blur(10px); /* Desenfoque de fondo */
+            background: rgba(22, 22, 22, 0.45); 
+            backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 20px; /* Bordes un toque más redondeados */
-            padding: 22px;
+            border-radius: 20px;
+            padding: 20px;
             text-decoration: none;
             color: #f2f2f2;
             display: flex;
@@ -112,29 +113,31 @@
             text-align: left;
             position: relative;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            min-height: 135px;
+            min-height: 140px;
+            overflow: hidden;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
         }
 
-        /* Efecto al pasar el dedo o mouse */
         .card:hover {
             transform: translateY(-5px);
             border-color: rgba(212, 175, 55, 0.4);
-            background: rgba(28, 28, 28, 0.8);
+            background: rgba(28, 28, 28, 0.6);
             box-shadow: 0 10px 30px rgba(212, 175, 55, 0.05);
         }
 
-        /* Iconos de las tarjetas */
-        .card-icon-top {
-            font-size: 18px;
-            color: #d4af37; /* Iconos dorados */
+        /* ÍCONOS Y FLECHAS */
+        .card-icon {
+            font-size: 22px;
+            color: #d4af37;
+            margin-bottom: 10px;
             opacity: 0.9;
         }
 
         .arrow-icon {
             position: absolute;
-            top: 22px;
-            right: 22px;
+            top: 20px;
+            right: 20px;
             font-size: 10px;
             color: #555;
             transition: all 0.3s ease;
@@ -145,65 +148,168 @@
             transform: translate(2px, -2px);
         }
 
-        /* Textos de las tarjetas */
-        .card-info {
-            margin-top: auto;
-            width: 100%;
-        }
-
+        /* TEXTOS DE TARJETAS */
         .card-title {
-            font-family: 'Montserrat', sans-serif;
             font-size: 15px;
             font-weight: 500;
             color: #ffffff;
+            margin-bottom: 4px;
             line-height: 1.3;
         }
 
         .card-subtitle {
-            font-size: 9px;
+            font-size: 10px;
             font-weight: 500;
+            color: #888888;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #666;
-            margin-top: 5px;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
+
+        /* TARJETA ESPECIAL: APOYÁ A LA BANDA */
+        .card-support {
+            background: rgba(212, 175, 55, 0.15); 
+            border: 1px solid rgba(212, 175, 55, 0.4); 
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card-support .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #d4af37;
+            margin-top: 10px;
+        }
+
+        .card-support:hover {
+            background: rgba(212, 175, 55, 0.25);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        /* TARJETA BIO */
+        .card-bio {
+            justify-content: center;
+        }
+        
+        .card-bio .card-title {
+            font-size: 12px;
+            font-weight: 300;
+            color: #cccccc;
+            line-height: 1.4;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        /* TARJETA SPOTIFY (Reproductor) */
+        .card-spotify {
+            padding: 0;
+            display: block; 
+            border: none;
+            background: transparent;
+        }
+        
+        .card-spotify iframe {
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
             display: block;
         }
 
-        /* TARJETA DESTACADA EN ANCHO COMPLETO */
-        .full-width {
-            grid-column: span 2;
-            min-height: auto;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 18px;
-            padding: 18px 22px;
-        }
-
-        .full-width i {
-            font-size: 22px;
-            color: #d4af37;
-        }
-
-        /* FOOTER DE REDES */
-        .social-footer {
-            margin-top: 30px;
+        /* ================================
+           VENTANA MODAL (BIOGRAFÍA)
+           ================================ */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             display: flex;
             justify-content: center;
-            gap: 24px;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 20px;
         }
 
-        .social-icon {
-            color: #555;
-            font-size: 20px;
-            transition: color 0.3s ease, transform 0.3s ease;
-            text-decoration: none;
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .social-icon:hover {
+        .modal-content {
+            background: rgba(20, 20, 20, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 30px 25px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            color: #f2f2f2;
+            text-align: left;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #aaaaaa;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
             color: #d4af37;
-            transform: scale(1.1);
         }
+
+        .modal-content h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            color: #d4af37;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .modal-text p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        .modal-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        .modal-content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .modal-content::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.5);
+            border-radius: 10px;
+        }
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: rgba(212, 175, 55, 0.8);
+        }
+
     </style>
 </head>
 <body>
@@ -211,74 +317,132 @@
     <div class="wrapper">
         
         <!-- ENCABEZADO -->
-        <div class="header">
-            <span class="tour-tag">Folk Rock</span>
-            <img src="perfil.jpg" alt="Unánima" class="profile-img">
+        <header class="header">
             <h1>Unánima</h1>
-            <p>Música de nuestra tierra con fuerza de rock</p>
-        </div>
-
-        <!-- GRILLA BENTO -->
-        <div class="bento-grid">
+            <img src="perfil.jpg" alt="Unánima Folk Rock" class="profile-img">
             
-            <!-- Tarjeta 1: Bio integrada -->
-            <div class="card" style="background: rgba(22, 22, 22, 0.45);">
-                <i class="fa-solid fa-feather card-icon-top"></i>
+            <div class="social-links">
+                <a href="https://open.spotify.com/intl-es/artist/6CMxClMEsHj6voKGOnFTyy" target="_blank" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://www.instagram.com/unanima.musica/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@unanimafolkrock7960" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </header>
+
+        <!-- GRILLA DE TARJETAS -->
+        <main class="bento-grid">
+            
+            <!-- Tarjeta 1: Próximo Show -->
+            <a href="#" class="card">
+                <i class="fa-solid fa-location-dot card-icon"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
                 <div class="card-info">
-                    <p class="card-title" style="font-size: 12px; font-weight: 300; color: #cccccc; line-height: 1.4;">Fusión de raíces folclóricas argentinas y la energía del rock.</p>
-                    <span class="card-subtitle">Biografía</span>
+                    <h2 class="card-title">Próximo Show</h2>
+                    <p class="card-subtitle">Próximamente</p>
                 </div>
+            </a>
+
+            <!-- Tarjeta 2: Apoyá a la banda (Ex Entradas) -->
+            <a href="https://cafecito.app/" target="_blank" class="card">
+                <i class="fa-solid fa-mug-hot card-icon"></i>
+                <h2 class="card-title">Apoyá a la banda</h2>
+            </a>
+
+            <!-- Tarjeta 3: Bio de la Banda (Abre Modal) -->
+            <a href="#" class="card card-bio" id="open-bio">
+                <i class="fa-solid fa-feather card-icon" style="font-size: 18px;"></i>
+                <div class="card-info">
+                    <p class="card-title">Fusión de raíces folclóricas argentinas y la energía del rock.</p>
+                    <p class="card-subtitle" style="margin-top: 5px;">Leer Biografía</p>
+                </div>
+            </a>
+
+            <!-- Tarjeta 4: Videos -->
+            <a href="https://www.youtube.com/@unanimafolkrock7960" target="_blank" class="card">
+                <i class="fa-brands fa-youtube card-icon"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+                <div class="card-info">
+                    <h2 class="card-title">Videos</h2>
+                    <p class="card-subtitle">YouTube</p>
+                </div>
+            </a>
+
+            <!-- Tarjeta 5: Música (REPRODUCTOR SPOTIFY INTEGRADO) -->
+            <div class="card card-spotify">
+                <iframe src="https://open.spotify.com/embed/track/1XSIBCsp69I810M9krjehW?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
 
-            <!-- Tarjeta 2: Próximo Show -->
-            <a href="#" class="card">
-                <i class="fa-solid fa-calendar-days card-icon-top"></i>
+
+
+
+            <!-- Tarjeta 6: Contacto -->
+            <a href="mailto:unanimafolkrock@gmail.com" target="_blank" class="card">
+                <i class="fa-solid fa-envelope card-icon"></i>
                 <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
                 <div class="card-info">
-                    <p class="card-title">Próximo Show</p>
-                    <span class="card-subtitle">Próximamente</span>
+                    <h2 class="card-title">Contacto</h2>
+                    <p class="card-subtitle">Mail</p>
                 </div>
             </a>
 
-            <!-- Tarjeta 3: YouTube -->
-            <a href="https://youtube.com" target="_blank" class="card">
-                <i class="fa-brands fa-youtube card-icon-top"></i>
-                <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
-                <div class="card-info">
-                    <p class="card-title">Videos</p>
-                    <span class="card-subtitle">YouTube</span>
-                </div>
-            </a>
-
-            <!-- Tarjeta 4: Spotify -->
-            <a href="#" class="card">
-                <i class="fa-brands fa-spotify card-icon-top"></i>
-                <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
-                <div class="card-info">
-                    <p class="card-title">Escuchanos</p>
-                    <span class="card-subtitle">Spotify</span>
-                </div>
-            </a>
-
-            <!-- Tarjeta 5: Contacto -->
-            <a href="mailto:unanimafolkrock@gmail.com" class="card full-width">
-                <i class="fa-solid fa-envelope"></i>
-                <div class="card-info">
-                    <p class="card-title">Contrataciones & Prensa</p>
-                    <span class="card-subtitle">unanimafolkrock@gmail.com</span>
-                </div>
-            </a>
-
-        </div>
-
-        <!-- FOOTER REDES -->
-        <div class="social-footer">
-            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://youtube.com" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
-            <a href="mailto:unanimafolkrock@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-
+        </main>
     </div>
+
+    <!-- MODAL DE LA BIOGRAFÍA -->
+    <div class="modal-overlay" id="bio-modal">
+        <div class="modal-content">
+            <button class="close-btn" id="close-bio"><i class="fa-solid fa-xmark"></i></button>
+            <h2>Historia</h2>
+            <div class="modal-text">
+                <p>Unánima es una banda formada en 2016 por músicos del partido de San Martín y alrededores, en el Conurbano Bonaerense. Su música parte de las raíces del folclore latinoamericano y se abre hacia el rock y la canción, construyendo un repertorio propio que toma elementos de zambas, chacareras, carnavalitos y otras formas de la música popular para llevarlos hacia una sonoridad propia.</p>
+                
+                <p>El folclore es el punto de partida, pero Unánima no busca reproducir sus formas de manera estricta. Los ritmos, rasgueos, tempos y recursos de estas músicas funcionan como materia prima para canciones que encuentran sus propias estructuras. En ese recorrido aparecen también elementos del rock, distintas búsquedas armónicas y una marcada atención a los timbres y las texturas.</p>
+                
+                <p>Las canciones suelen llegar de la mano de Sofía, con melodía y letra ya delineadas, y terminan de construirse entre los cuatro integrantes. A veces el trabajo colectivo transforma profundamente una canción: puede cambiar su ritmo, su dinámica o su recorrido. Otras veces cada músico encuentra naturalmente su lugar y la canción parece pedir poco más que los instrumentos necesarios. En ambos casos, el objetivo es encontrar aquello que la canción necesita.</p>
+                
+                <p>Las letras ocupan un lugar central. Hablan de vínculos, experiencias y elementos de la naturaleza, con una mirada sensible e introspectiva. Son canciones pensadas y trabajadas, donde la palabra tiene tanto peso como la música. Algunas construyen momentos casi hipnóticos o cercanos al mantra; otras invitan al movimiento desde sus raíces folclóricas. En conjunto, la propuesta está pensada más como una experiencia de escucha que como una reproducción estricta de los códigos tradicionales de cada género.</p>
+                
+                <p>En el sonido de Unánima conviven instrumentos acústicos, capas de instrumentos, diferentes texturas y contrastes de dinámica: momentos en los que la música crece y ocupa todo el espacio y otros en los que se vuelve íntima y deja lugar al silencio. En las nuevas grabaciones, la banda también explora la incorporación de sonidos ambientales para ampliar ese paisaje sonoro.</p>
+                
+                <p>El formato habitual es el de una banda de cuatro integrantes —Sofía en voz y guitarra, Nicolás en guitarra y charango, Gabriel en bajo y Camila en batería y percusión—, al que ocasionalmente se suman músicos amigos como Sol en violín y Hugo en flauta traversa, tanto en presentaciones como en grabaciones.</p>
+                
+                <p>El nombre Unánima nace de una idea vinculada al alma: la unión de distintas ánimas en una sola. Con cuatro músicos de trayectorias diferentes, esa idea terminó encontrando una forma concreta en la manera de trabajar y de hacer música juntos.</p>
+                
+                <p>La historia de la banda está estrechamente ligada a San Martín. Allí se conocieron a través de músicos y amigos en común, allí comenzaron a tocar y allí funciona actualmente su espacio de ensayo y grabación que se convirtió en una suerte de centro de operaciones de Unánima. A pocas cuadras de ese lugar tuvo lugar su primera presentación y también algunas de sus experiencias escénicas más significativas, como una presentación en una feria de colectividades y la participación como banda invitada de Bruno Arias.</p>
+                
+                <p>Después de varios años de recorrido, Unánima continúa construyendo su repertorio desde el encuentro entre cuatro músicos con diferentes recorridos pero raíces cercanas. El proyecto se sostiene, en buena medida, por algo sencillo: el deseo de volver a encontrarse a tocar. Incluso después de una semana de trabajo, cada viernes por la noche los cuatro hacen el esfuerzo de estar ahí.</p>
+                
+                <p>Unánima es una banda que busca hacer viajar a quien escucha. Un paisaje sonoro hecho de canciones, texturas, raíces y encuentros. Una música para cerrar los ojos, dejarse llevar y permitir que los sonidos hagan el resto.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT PARA EL FUNCIONAMIENTO DEL MODAL -->
+    <script>
+        const openBioBtn = document.getElementById('open-bio');
+        const closeBioBtn = document.getElementById('close-bio');
+        const bioModal = document.getElementById('bio-modal');
+
+        // Abrir modal
+        openBioBtn.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            bioModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        });
+
+        // Cerrar modal con la X
+        closeBioBtn.addEventListener('click', function() {
+            bioModal.classList.remove('active');
+            document.body.style.overflow = 'auto'; 
+        });
+
+        // Cerrar modal si tocás afuera de la caja de texto
+        bioModal.addEventListener('click', function(e) {
+            if (e.target === bioModal) {
+                bioModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 
 </body>
 </html>
